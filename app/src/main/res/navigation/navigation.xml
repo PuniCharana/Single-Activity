@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@+id/homeFragment">
+
+    <fragment android:id="@+id/homeFragment" android:name="com.example.singleactivity.HomeFragment"
+              android:label="@string/home" tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_homeFragment_to_playFragment" app:destination="@id/playFragment"/>
+    </fragment>
+
+
+    <fragment android:id="@+id/playFragment" android:name="com.example.singleactivity.PlayFragment"
+              android:label="Play Fragment" tools:layout="@layout/fragment_play">
+
+        <action android:id="@+id/action_playFragment_to_tryAgainFragment"
+                app:destination="@id/tryAgainFragment"
+                app:popUpTo="@+id/playFragment"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/slide_in_left"
+                app:exitAnim="@anim/slide_out_right"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+
+
+        <action android:id="@+id/action_playFragment_to_congratsFragment" app:destination="@id/congratsFragment"
+                app:popUpTo="@+id/playFragment" app:popUpToInclusive="true" app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left" app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+    <fragment android:id="@+id/tryAgainFragment" android:name="com.example.singleactivity.TryAgainFragment"
+              android:label="Try Again" tools:layout="@layout/fragment_try_again">
+        <action android:id="@+id/action_tryAgainFragment_to_playFragment" app:destination="@id/playFragment"
+                app:popUpTo="@+id/playFragment" app:popUpToInclusive="true"/>
+    </fragment>
+
+
+    <fragment android:id="@+id/congratsFragment" android:name="com.example.singleactivity.CongratsFragment"
+              android:label="Congrats" tools:layout="@layout/fragment_congrats"
+              app:enterAnim="@anim/slide_in_left"
+              app:exitAnim="@anim/slide_out_right"
+              app:popEnterAnim="@anim/slide_in_left"
+              app:popExitAnim="@anim/slide_out_right"/>
+
+
+    <fragment android:id="@+id/settingsFragment" android:name="com.example.singleactivity.SettingsFragment"
+              android:label="@string/settings" tools:layout="@layout/fragment_settings"
+              app:enterAnim="@anim/slide_in_left"
+              app:exitAnim="@anim/slide_out_right"
+              app:popEnterAnim="@anim/slide_in_left"
+              app:popExitAnim="@anim/slide_out_right"/>
+
+
+    <fragment android:id="@+id/aboutFragment" android:name="com.example.singleactivity.AboutFragment"
+              android:label="@string/about" tools:layout="@layout/fragment_about"
+              app:enterAnim="@anim/slide_in_left"
+              app:exitAnim="@anim/slide_out_right"
+              app:popEnterAnim="@anim/slide_in_left"
+              app:popExitAnim="@anim/slide_out_right"/>
+</navigation>
