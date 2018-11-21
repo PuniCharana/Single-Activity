@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/eclair" android:id="@+id/eclairFragment" android:icon="@drawable/ic_menu_gallery"/>
+    <item android:title="@string/donut" android:id="@+id/donutFragment" android:icon="@drawable/ic_menu_camera"/>
+    <item android:title="@string/cupcake" android:id="@+id/cupcakeFragment" android:icon="@drawable/ic_menu_share"/>
+    <item android:title="Honeycomb" android:id="@+id/honeycombFragment" android:icon="@drawable/ic_menu_send"/>
+    <item android:title="Oreo" android:id="@+id/oreoFragment" android:icon="@drawable/ic_menu_manage"/>
+</menu>

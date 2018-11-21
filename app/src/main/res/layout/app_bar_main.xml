@@ -21,7 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
     <fragment
             android:id="@+id/myNavHostFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -30,5 +29,17 @@
             android:layout_height="match_parent"
             app:navGraph="@navigation/navigation"
             app:defaultNavHost="true"/>
+
+    <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:layout_gravity="bottom"
+            android:id="@+id/bottom_nav"
+            app:menu="@menu/menu_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
 
 </android.support.design.widget.CoordinatorLayout>
