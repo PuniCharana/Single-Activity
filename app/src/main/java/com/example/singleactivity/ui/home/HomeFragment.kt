@@ -1,12 +1,12 @@
-package com.example.singleactivity
+package com.example.singleactivity.ui.home
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import com.example.singleactivity.R
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : androidx.fragment.app.Fragment() {
