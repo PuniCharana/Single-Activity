@@ -1,9 +1,9 @@
 package com.example.singleactivity
 
 import android.os.Bundle
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -25,19 +25,18 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawer_layout)
         NavigationUI.setupWithNavController(nav_view, navController)
 
-        navController.addOnNavigatedListener { nc: NavController, nd: NavDestination ->
-            // Allow swipe in drawer only on first screen
-            if (nd.id == nc.graph.startDestination) {
-                drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            if (destination.id == controller.graph.startDestination) {
+                drawer_layout.setDrawerLockMode(androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_UNLOCKED)
             } else {
-                drawer_layout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+                drawer_layout.setDrawerLockMode(androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
             }
         }
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
-        return NavigationUI.navigateUp(drawer_layout, navController)
+        return NavigationUI.navigateUp(navController, drawer_layout)
     }
 
     override fun onBackPressed() {
